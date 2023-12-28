@@ -5,12 +5,15 @@ import task2.Product;
 import task2.Store;
 import task3.Bank;
 import task3.BankAccount;
+import task4.Student;
+import task4.StudentManager;
 
 public class Main {
     public static void main(String[] args) {
 //        task1();
 //        task2();
-        task3();
+//        task3();
+        task4();
     }
 
     //Task1
@@ -98,6 +101,34 @@ public class Main {
         bank.info();
         System.out.println("==========================");
         bank.checkBalance(account1);
+    }
+
+
+    //Task4
+    //4. Управление студентами
+    //Создайте класс Student с полями имя, возраст и средний балл.
+    //Затем создайте класс StudentManager, который будет
+    //управлять списком студентов. Реализуйте методы для
+    //добавления студентов, удаления, обновления информации и
+    //вывода информации о студентах с наивысшими баллами.
+    public static void task4(){
+        Student student1 = new Student("Name1", 21, 1);
+        Student student2 = new Student("Name2", 22, 21);
+        Student student3 = new Student("Name3", 23, 3);
+        StudentManager manager = new StudentManager();
+        manager.addStudent(student1);
+        manager.addStudent(student2);
+        manager.addStudent(student3);
+        manager.info();
+        System.out.println("===============");
+        manager.delete(student2);
+        manager.info();
+        System.out.println("===============");
+        manager.update(student1, 5);
+        manager.info();
+        System.out.println("===============");
+        manager.getMaxAverage();
+
     }
 
 
