@@ -7,13 +7,17 @@ import task3.Bank;
 import task3.BankAccount;
 import task4.Student;
 import task4.StudentManager;
+import task5.Customer;
+import task5.Order;
+import task5.ProductTask5;
 
 public class Main {
     public static void main(String[] args) {
 //        task1();
 //        task2();
 //        task3();
-        task4();
+//        task4();
+        task5();
     }
 
     //Task1
@@ -131,6 +135,29 @@ public class Main {
 
     }
 
+    //Task5
+    //5. Интернет-магазин заказов
+    //Создайте классы Customer, Product и Order. Customer содержит
+    //информацию о клиенте, Product - о продукте, а Order -
+    //о заказе, который включает в себя информацию о клиенте,
+    //товарах и общей стоимости. Реализуйте методы для
+    //добавления товаров в заказ,
+    //подсчета общей стоимости и вывода информации о заказе.
+    public static void task5(){
+        Customer customer = new Customer("Customer1");
+        ProductTask5 product1 = new ProductTask5("Product1", 100);
+        ProductTask5 product2 = new ProductTask5("Product2", 200);
+        ProductTask5 product3 = new ProductTask5("Product3", 300);
+        ProductTask5 product4 = new ProductTask5("Product4", 400);
+        Order order = new Order(customer);
+        order.addProduct(product1);
+        order.addProduct(product2);
+        order.addProduct(product3);
+        order.addProduct(product4);
+        order.info();
+        System.out.println("TotalCost = " + order.getTotalCost());
+
+    }
 
 
 }
