@@ -3,11 +3,14 @@ import task1.Task;
 import task1.TaskManager;
 import task2.Product;
 import task2.Store;
+import task3.Bank;
+import task3.BankAccount;
 
 public class Main {
     public static void main(String[] args) {
 //        task1();
-        task2();
+//        task2();
+        task3();
     }
 
     //Task1
@@ -67,6 +70,36 @@ public class Main {
         store.info();
         store.price();
     }
+
+    //Task3
+    //3. Банковский счет
+    //Создайте класс BankAccount с полями номер счета, имя
+    //владельца и баланс. Реализуйте методы для пополнения счета,
+    //снятия средств, проверки баланса и перевода средств между
+    //счетами.
+    public static void task3(){
+        BankAccount account1 = new BankAccount("1", "Name1", 10);
+        BankAccount account2 = new BankAccount("2", "Name2", 20);
+        BankAccount account3 = new BankAccount("3", "Name3", 30);
+
+        Bank bank = new Bank();
+        bank.addAcc(account1);
+        bank.addAcc(account2);
+        bank.addAcc(account3);
+        bank.info();
+        System.out.println("==========================");
+        bank.refill(account1, 100);
+        bank.info();
+        System.out.println("==========================");
+        bank.withdraw(account1, 100);
+        bank.info();
+        System.out.println("==========================");
+        bank.move(account3, account1, 10);
+        bank.info();
+        System.out.println("==========================");
+        bank.checkBalance(account1);
+    }
+
 
 
 }
