@@ -49,10 +49,23 @@ public class Main {
     //добавления товаров, продажи товаров, обновления информации
     //о товарах и вывода общей стоимости товаров на складе.
     public static void task2(){
-        Product product1 = new Product("Product1", 2, 10);
+        Product product1 = new Product("Product1", 1, 10);
+        Product product2 = new Product("Product2", 2, 10);
+        Product product3 = new Product("Product3", 3, 10);
+        Product product4 = new Product("Product4", 4, 10);
         Store store = new Store();
         store.addProduct(product1);
+        store.addProduct(product2);
+        store.addProduct(product3);
+        store.addProduct(product4);
         store.info();
+        store.price();
+        store.update(product2, 20);
+        store.info();
+        store.price();
+        store.sellProduct(product1, 5);
+        store.info();
+        store.price();
     }
 
 
